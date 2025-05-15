@@ -7,21 +7,18 @@ It was filtered to remove corrupt or unsupported image formats (.jpeg, .jpg, .pn
 
 🧪 Model Architecture
 A simple CNN built using Keras' Sequential API:
-model = Sequential([
-    Input(shape=(256, 256, 3)),
-    Conv2D(16, (3, 3), strides=1, activation='relu'),
-    MaxPooling2D(),
 
-    Conv2D(32, (3, 3), strides=1, activation='relu'),
-    MaxPooling2D(),
-
-    Conv2D(16, (3, 3), strides=1, activation='relu'),
-    MaxPooling2D(),
-
-    Flatten(),
-    Dense(256, activation='relu'),
-    Dense(1, activation='sigmoid')  # Binary classification
-])
+    model=Sequential([
+        Input(shape=(256, 256, 3)),
+        Conv2D(16, (3, 3), strides=1, activation='relu'),
+        MaxPooling2D(),
+        Conv2D(32, (3, 3), strides=1, activation='relu'),
+        MaxPooling2D(),
+        Conv2D(16, (3, 3), strides=1, activation='relu'),
+        MaxPooling2D(),
+        Flatten(),
+        Dense(256, activation='relu'),
+        Dense(1, activation='sigmoid')  # Binary classification])
 
  Training
 Images are resized to (256, 256) and normalized (x/255).
